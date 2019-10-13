@@ -1,0 +1,147 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.0.274.1 clang-1100.0.33.9)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Dijkstra
+@_exported import Dijkstra
+import Foundation
+import Swift
+import UIKit
+public protocol Graphable {
+  associatedtype Element : Swift.Hashable
+  var description: Swift.CustomStringConvertible { get }
+  func createVertex(data: Self.Element) -> Dijkstra.Vertex<Self.Element>
+  func add(_ type: Dijkstra.EdgeType, from source: Dijkstra.Vertex<Self.Element>, to destination: Dijkstra.Vertex<Self.Element>, weight: Swift.Double?)
+  func weight(from source: Dijkstra.Vertex<Self.Element>, to destination: Dijkstra.Vertex<Self.Element>) -> Swift.Double?
+  func edges(from source: Dijkstra.Vertex<Self.Element>) -> [Dijkstra.Edge<Self.Element>]?
+}
+extension Graphable {
+  public func route(to destination: Dijkstra.Vertex<Self.Element>, in tree: [Dijkstra.Vertex<Self.Element> : Dijkstra.Visit<Self.Element>]) -> [Dijkstra.Edge<Self.Element>]
+  public func distance(to destination: Dijkstra.Vertex<Self.Element>, in tree: [Dijkstra.Vertex<Self.Element> : Dijkstra.Visit<Self.Element>]) -> Swift.Double
+  public func dijkstra(from source: Dijkstra.Vertex<Self.Element>, to destination: Dijkstra.Vertex<Self.Element>) -> [Dijkstra.Edge<Self.Element>]?
+}
+public enum Visit<Element> where Element : Swift.Hashable {
+  case source
+  case edge(Dijkstra.Edge<Element>)
+}
+extension Graphable {
+  public func breadthFirstSearch(from source: Dijkstra.Vertex<Self.Element>, to destination: Dijkstra.Vertex<Self.Element>) -> [Dijkstra.Edge<Self.Element>]?
+}
+public struct Route : Swift.Codable {
+  public var id: Swift.String
+  public var graphType: Swift.String
+  public var vertexFrom: Swift.String
+  public var vertexTo: Swift.String
+  public var weight: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct PriorityQueue<T> {
+  public init(sort: @escaping (T, T) -> Swift.Bool)
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  public var count: Swift.Int {
+    get
+  }
+  public func peek() -> T?
+  mutating public func enqueue(_ element: T)
+  mutating public func dequeue() -> T?
+}
+public struct RouteVertex : Swift.Codable {
+  public var id: Swift.String
+  public var type: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc public class Network : ObjectiveC.NSObject {
+  public static let sharedInstance: Dijkstra.Network
+  public func get(url: Swift.String, completion: @escaping (Foundation.Data?, Foundation.NSError?) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum EdgeType {
+  case directed, undirected
+  public static func == (a: Dijkstra.EdgeType, b: Dijkstra.EdgeType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public struct Edge<T> where T : Swift.Hashable {
+  public var source: Dijkstra.Vertex<T>
+  public var destination: Dijkstra.Vertex<T>
+  public let weight: Swift.Double?
+}
+extension Edge : Swift.Hashable {
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (lhs: Dijkstra.Edge<T>, rhs: Dijkstra.Edge<T>) -> Swift.Bool
+}
+public struct LinkedList<T> : Swift.CustomStringConvertible {
+  public init()
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  public var first: Dijkstra.Node<T>? {
+    get
+  }
+  mutating public func append(_ value: T)
+  mutating public func remove(_ node: Dijkstra.Node<T>) -> T
+  public var description: Swift.String {
+    get
+  }
+}
+public class Node<T> {
+  public var value: T
+  public var next: Dijkstra.Node<T>?
+  public var previous: Dijkstra.Node<T>?
+  public init(value: T)
+  @objc deinit
+}
+public struct Vertex<T> where T : Swift.Hashable {
+  public var data: T
+}
+extension Vertex : Swift.Hashable {
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (lhs: Dijkstra.Vertex<T>, rhs: Dijkstra.Vertex<T>) -> Swift.Bool
+}
+extension Vertex : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+open class AdjacencyList<T> where T : Swift.Hashable {
+  public var adjacencyDict: [Dijkstra.Vertex<T> : [Dijkstra.Edge<T>]]
+  public init()
+  @objc deinit
+}
+extension AdjacencyList : Dijkstra.Graphable {
+  public typealias Element = T
+  public func createVertex(data: Dijkstra.AdjacencyList<T>.Element) -> Dijkstra.Vertex<Dijkstra.AdjacencyList<T>.Element>
+  public func add(_ type: Dijkstra.EdgeType, from source: Dijkstra.Vertex<Dijkstra.AdjacencyList<T>.Element>, to destination: Dijkstra.Vertex<Dijkstra.AdjacencyList<T>.Element>, weight: Swift.Double?)
+  public func weight(from source: Dijkstra.Vertex<Dijkstra.AdjacencyList<T>.Element>, to destination: Dijkstra.Vertex<Dijkstra.AdjacencyList<T>.Element>) -> Swift.Double?
+  public func edges(from source: Dijkstra.Vertex<Dijkstra.AdjacencyList<T>.Element>) -> [Dijkstra.Edge<Dijkstra.AdjacencyList<T>.Element>]?
+  public var description: Swift.CustomStringConvertible {
+    get
+  }
+}
+public struct Queue<T> {
+  public init()
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  mutating public func enqueue(_ element: T)
+  mutating public func dequeue() -> T?
+  public func peek() -> T?
+}
+extension Queue : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension Dijkstra.EdgeType : Swift.Equatable {}
+extension Dijkstra.EdgeType : Swift.Hashable {}
