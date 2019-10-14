@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1C6C5D2354644200B53A5A /* Dijkstra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1C6C58235463EC00B53A5A /* Dijkstra.framework */; };
+		4E1C6C5E2354644200B53A5A /* Dijkstra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1C6C58235463EC00B53A5A /* Dijkstra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4E3BAE11235268B3000B01D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3BAE10235268B3000B01D8 /* AppDelegate.swift */; };
 		4E3BAE13235268B3000B01D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3BAE12235268B3000B01D8 /* SceneDelegate.swift */; };
 		4E3BAE18235268B3000B01D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3BAE16235268B3000B01D8 /* Main.storyboard */; };
 		4E3BAE1A235268BB000B01D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3BAE19235268BB000B01D8 /* Assets.xcassets */; };
 		4E3BAE1D235268BB000B01D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3BAE1B235268BB000B01D8 /* LaunchScreen.storyboard */; };
-		4E3BAE262352698F000B01D8 /* Dijkstra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3BAE252352698F000B01D8 /* Dijkstra.framework */; };
 		4E58ECC4235375EE0009B46A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E58ECC3235375EE0009B46A /* ViewController.swift */; };
 		4EB9A3E52353789200C6DDD0 /* TestDijkstraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB9A3E42353789200C6DDD0 /* TestDijkstraTests.swift */; };
-		4EB9A3EC235378E700C6DDD0 /* Dijkstra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3BAE252352698F000B01D8 /* Dijkstra.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +28,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4E1C6C5F2354644200B53A5A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4E1C6C5E2354644200B53A5A /* Dijkstra.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4E1C6C58235463EC00B53A5A /* Dijkstra.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dijkstra.framework; path = ../Dijkstra/Frameworks/Dijkstra.framework; sourceTree = "<group>"; };
 		4E3BAE0D235268B3000B01D8 /* TestDijkstra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDijkstra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3BAE10235268B3000B01D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E3BAE12235268B3000B01D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +51,6 @@
 		4E3BAE19235268BB000B01D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E3BAE1C235268BB000B01D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E3BAE1E235268BB000B01D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E3BAE252352698F000B01D8 /* Dijkstra.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dijkstra.framework; path = ../Dijkstra/Frameworks/Dijkstra.framework; sourceTree = "<group>"; };
 		4E58ECC3235375EE0009B46A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4EB9A3E22353789200C6DDD0 /* TestDijkstraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestDijkstraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB9A3E42353789200C6DDD0 /* TestDijkstraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDijkstraTests.swift; sourceTree = "<group>"; };
@@ -48,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E3BAE262352698F000B01D8 /* Dijkstra.framework in Frameworks */,
+				4E1C6C5D2354644200B53A5A /* Dijkstra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EB9A3EC235378E700C6DDD0 /* Dijkstra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +79,7 @@
 		4E3BAE04235268B3000B01D8 = {
 			isa = PBXGroup;
 			children = (
-				4E3BAE252352698F000B01D8 /* Dijkstra.framework */,
+				4E1C6C58235463EC00B53A5A /* Dijkstra.framework */,
 				4E3BAE0F235268B3000B01D8 /* TestDijkstra */,
 				4EB9A3E32353789200C6DDD0 /* TestDijkstraTests */,
 				4E3BAE0E235268B3000B01D8 /* Products */,
@@ -131,6 +144,7 @@
 				4E3BAE09235268B3000B01D8 /* Sources */,
 				4E3BAE0A235268B3000B01D8 /* Frameworks */,
 				4E3BAE0B235268B3000B01D8 /* Resources */,
+				4E1C6C5F2354644200B53A5A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,15 +398,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42UG2T5UXS;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8DT5Y3HP4L;
 				INFOPLIST_FILE = TestDijkstra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.marizack.TestDijkstra;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marizack.TestDijkstraApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "TestDijkstraApp Dev ProvProfile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -402,15 +418,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42UG2T5UXS;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8DT5Y3HP4L;
 				INFOPLIST_FILE = TestDijkstra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.marizack.TestDijkstra;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marizack.TestDijkstraApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "TestDijkstraApp Dev ProvProfile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
